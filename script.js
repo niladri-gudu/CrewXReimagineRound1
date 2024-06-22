@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   logoHover();
   imgsHover();
   rowSlide();
+  tabHoriScroll();
 });
 
 function lenis() {
@@ -220,8 +221,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row1,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -232,8 +233,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row2,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -244,8 +245,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row3,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -272,7 +273,7 @@ function rowSlide() {
       trigger: row1,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   })
@@ -284,7 +285,7 @@ function rowSlide() {
       trigger: row2,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   });
@@ -296,8 +297,25 @@ function rowSlide() {
       trigger: row3,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   });
+}
+
+function tabHoriScroll() {
+  const container = document.querySelector("#page3");
+  const sections = gsap.utils.toArray(".sec");
+
+  const horizontalScroll = gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      pin: true,
+      start: "top top",
+      scrub: 1,
+      end: '+=5000'
+    }
+  })
 }

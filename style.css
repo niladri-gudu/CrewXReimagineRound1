@@ -23,3 +23,10 @@ html, body {
   scrollbar-width: none;
 }
 
+#page3 {
+  overflow-x: hidden;
+}
+
+#page3 .sec img {
+  filter: drop-shadow(0px 0px 10px #000000);
+}
