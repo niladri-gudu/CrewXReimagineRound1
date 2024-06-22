@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notion</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="main" class="relative">
+    <div id="cursor" class="border-2 border-white bg-white mix-blend-difference rounded-full fixed h-[3vw] w-[3vw] z-20"></div>
+    <div id="page1" class="h-screen w-screen bg-[#101010] text-white">
+      <header class="w-screen bg-[#111] flex items-center justify-between px-[12vw] py-[2vw]">
+        <div class="flex gap-[1vw] items-center justify-center logo z-30 mix-blend-difference">
+          <img class="h-[3vw]" src="./images/notion logo/notion-logo-svgrepo-com.svg" alt="">
+          <img class="h-[2.5vw] text-white" src="./images/notion logo/Untitled.svg" alt="">
+        </div>
+        <i class="ri-menu-line text-3xl text-white"></i>
+      </header>
+      <div class="logos w-screen h-[86.3vh] absolute flex justify-center items-center">
+        <div class="div1 h-[10vw] w-[10vw] absolute top-24 left-32 flex items-center justify-center z-30 mix-blend-difference imggg">
+          <img class="logo1 h-[8vw]" src="./images/home images/task/task white.svg" alt="">
+        </div>
+        <div class="div2 h-[10vw] w-[10vw] absolute bottom-28 left-56 flex items-center justify-center z-30 mix-blend-difference imggg">
+          <img class="logo2 h-[8vw]" src="./images/home images/money/money white.svg" alt="">
+        </div>
+        <div class="div2 h-[10vw] w-[10vw] absolute top-24 right-32 flex items-center justify-center z-30 mix-blend-difference imggg">
+          <img class="logo2 h-[8vw]" src="./images/home images/target/target white.svg" alt="">
+        </div>
+        <div class=" div1 h-[10vw] w-[10vw] absolute bottom-28 right-56 flex items-center justify-center z-30 mix-blend-difference imggg">
+          <img class="logo1 h-[8vw]" src="./images/home images/todo/todo white.svg" alt="">
+        </div>
+    </div>
+      <div id="home" class="h-[67vh] w-screen flex flex-col items-center justify-center">
+        <div class="overlay text-9xl font-bold tracking-tight z-30 tag">Organize</div>
+        <div class="overlay text-9xl font-bold tracking-tight z-30 tag">Everything</div>
+        <p class="text-center pt-10 text-xl opacity-80">Turn ideas into action
+          with Notion’s AI-powered workspace.</p>
+      </div>
+      <div class="flex gap-10 justify-center">
+        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#0F62FE] w-fit rounded-lg py-4 px-6 gap-4 text-white ease-in-out hover:bg-[#0053a3]">
+          Get Started
+          <svg class="flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96967 12.5303C3.67678 12.2374 3.67678 11.7626 3.96967 11.4697L8.43934 7L3.96967 2.53033C3.67678 2.23744 3.67678 1.76256 3.96967 1.46967C4.26256 1.17678 4.73744 1.17678 5.03033 1.46967L10.0303 6.46967C10.3232 6.76256 10.3232 7.23744 10.0303 7.53033L5.03033 12.5303C4.73744 12.8232 4.26256 12.8232 3.96967 12.5303Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        
+        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#25272b] w-fit rounded-lg py-4 px-6 gap-4 text-white ease-in-out hover:bg-[#1c1e21]">
+          See Pricing
+          <svg class="flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96967 12.5303C3.67678 12.2374 3.67678 11.7626 3.96967 11.4697L8.43934 7L3.96967 2.53033C3.67678 2.23744 3.67678 1.76256 3.96967 1.46967C4.26256 1.17678 4.73744 1.17678 5.03033 1.46967L10.0303 6.46967C10.3232 6.76256 10.3232 7.23744 10.0303 7.53033L5.03033 12.5303C4.73744 12.8232 4.26256 12.8232 3.96967 12.5303Z" fill="currentColor"></path>
+          </svg>
+        </div>
+        
+      </div>
+    </div>
+    <div id="page2" class="h-screen w-screen bg-[#fff]">
+      <h1 class="text-center font-bold text-6xl tracking-tight pt-24">Millions run on Notion every day</h1>
+      <p class="text-center pt-8 pb-10 mx-[32vw] text-lg">Powering the world’s best teams, from next-generation startups to established enterprises.</p>
+      <div id="row1" class="flex w-[70vw] m-auto justify-between items-center h-[10vh] mt-12">
+        <img class="w-[8vw] object-cover" src="./images/brand logo images/amazon.png" alt="Amazon">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/angellist.png" alt="AngelList">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/buffer.png" alt="Buffer">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/camgemini.png" alt="Capgemini">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/codecademy.png" alt="Codecademy">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/doordash.png" alt="DoorDash">
+      </div>
+  
+      <div id="row2" class="flex w-[70vw] m-auto justify-between items-center h-[10vh] mt-4">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/figma.png" alt="Figma">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/GeneralElectric.png" alt="General Electric">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/headspace.png" alt="Headspace">
+        <img class="w-[8vw] object-cover" src="./images/brand logo images/nike.png" alt="Nike">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/pinterest.png" alt="Pinterest">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/pixar.png" alt="Pixar">
+      </div>
+  
+      <div id="row3" class="flex w-[70vw] m-auto justify-between items-center h-[10vh] mt-4 mb-10">
+        <img class="w-[8vw] object-cover" src="./images/brand logo images/plaid.png" alt="Plaid">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/robinhood.png" alt="Robinhood">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/snowflake.png" alt="Snowflake">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/toyota.png" alt="Toyota">
+        <img class="w-[9vw] object-cover" src="./images/brand logo images/typeform.png" alt="Typeform">
+        <img class="w-[7vw] object-cover" src="./images/brand logo images/uber.png" alt="Uber">
+      </div>
+    </div>
+    <div id="page3" class="h-screen w-screen bg-slate-300"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
