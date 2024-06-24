@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   tagHover();
   cursorScale();
   logoHover();
-  imgsHover();
   rowSlide();
   tabHoriScroll();
 });
+
+window.addEventListener("mousemove", handleMouseMove);
 
 function lenis() {
   const lenis = new Lenis({
@@ -129,44 +130,6 @@ function mainButton() {
     });
   })
 }
-
-// function imgHover() {
-//   const div1 = document.querySelectorAll('.div1');
-//   const logo1 = document.querySelectorAll('.logo1');
-//   const logos = document.querySelector('.logos');
-
-//   logos.addEventListener('mousemove', (event) => {
-//     logo1.forEach(logo => {
-//       let rect = logo.getBoundingClientRect();
-//       let logoWidth = rect.width;
-//       let logoHeight = rect.height;
-//       let parentRect = logo.parentElement.getBoundingClientRect();
-
-//       let newX = gsap.utils.mapRange(
-//         0,
-//         parentRect.width,
-//         -logoWidth / 2,
-//         parentRect.width - logoWidth,
-//         event.clientX - parentRect.left
-//       );
-
-//       let newY = gsap.utils.mapRange(
-//         0,
-//         parentRect.height,
-//         -logoHeight / 2,
-//         parentRect.height - logoHeight,
-//         event.clientY - parentRect.top
-//       );
-
-//       gsap.to(logo, {
-//         x: newX,
-//         y: newY,
-//         duration: 0.5,
-//         ease: "power2.out"
-//       });
-//     });
-//   });
-// }
 
 function logoHover() {
   const logo = document.querySelector(".logo");
@@ -319,3 +282,40 @@ function tabHoriScroll() {
     }
   })
 }
+
+function handleMouseMove(event) {
+  const { clientX, clientY } = event;
+  
+  const moveX = (clientX / window.innerWidth - 0.5) * 30;
+  const moveY = (clientY / window.innerHeight - 0.5) * 30;
+
+
+  gsap.to(".logo1", {
+    x: moveX,
+    y: moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo2", {
+    x: -moveX,
+    y: -moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo3", {
+    x: moveX,
+    y: moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo4", {
+    x: -moveX,
+    y: -moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+}
+
