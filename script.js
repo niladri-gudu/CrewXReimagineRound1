@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   logoHover();
   imgsHover();
   rowSlide();
+  tabHoriScroll();
 });
+
+window.addEventListener("mousemove", handleMouseMove);
 
 function lenis() {
   const lenis = new Lenis({
@@ -37,6 +40,41 @@ function cursorMove() {
       ease: "power2.out"
     });
   });
+}
+
+function mainButton() {
+  const mainButtons = document.querySelectorAll(".mainButton");
+  const cursor = document.querySelector("#cursor");
+
+  mainButtons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+      gsap.to(cursor, {
+        scale: 0.5,
+        duration: 0.2
+      });
+      gsap.to(button, {
+        x: Math.random() * 10 - 2,
+        y: Math.random() * 10 - 2,
+        rotation: Math.random() * 10 - 2,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    button.addEventListener("mouseleave", () => {
+      gsap.to(cursor, {
+        scale: 1,
+        duration: 0.2
+      });
+      gsap.to(button, {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+  })
 }
 
 function tagBreak() {
@@ -94,79 +132,6 @@ function cursorScale() {
   });
 }
 
-function mainButton() {
-  const mainButtons = document.querySelectorAll(".mainButton");
-  const cursor = document.querySelector("#cursor");
-
-  mainButtons.forEach(button => {
-    button.addEventListener("mouseenter", () => {
-      gsap.to(cursor, {
-        scale: 0.5,
-        duration: 0.2
-      });
-      gsap.to(button, {
-        x: Math.random() * 10 - 2,
-        y: Math.random() * 10 - 2,
-        rotation: Math.random() * 10 - 2,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    });
-
-    button.addEventListener("mouseleave", () => {
-      gsap.to(cursor, {
-        scale: 1,
-        duration: 0.2
-      });
-      gsap.to(button, {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    });
-  })
-}
-
-// function imgHover() {
-//   const div1 = document.querySelectorAll('.div1');
-//   const logo1 = document.querySelectorAll('.logo1');
-//   const logos = document.querySelector('.logos');
-
-//   logos.addEventListener('mousemove', (event) => {
-//     logo1.forEach(logo => {
-//       let rect = logo.getBoundingClientRect();
-//       let logoWidth = rect.width;
-//       let logoHeight = rect.height;
-//       let parentRect = logo.parentElement.getBoundingClientRect();
-
-//       let newX = gsap.utils.mapRange(
-//         0,
-//         parentRect.width,
-//         -logoWidth / 2,
-//         parentRect.width - logoWidth,
-//         event.clientX - parentRect.left
-//       );
-
-//       let newY = gsap.utils.mapRange(
-//         0,
-//         parentRect.height,
-//         -logoHeight / 2,
-//         parentRect.height - logoHeight,
-//         event.clientY - parentRect.top
-//       );
-
-//       gsap.to(logo, {
-//         x: newX,
-//         y: newY,
-//         duration: 0.5,
-//         ease: "power2.out"
-//       });
-//     });
-//   });
-// }
-
 function logoHover() {
   const logo = document.querySelector(".logo");
   const cursor = document.querySelector("#cursor");
@@ -220,8 +185,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row1,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -232,8 +197,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row2,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -244,8 +209,8 @@ function rowSlide() {
     scrollTrigger: {
       trigger: row3,
       start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+      end: "top 70%",
+      scrub: 1,
       ease: "power2.out"
     }
   });
@@ -272,7 +237,7 @@ function rowSlide() {
       trigger: row1,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   })
@@ -284,7 +249,7 @@ function rowSlide() {
       trigger: row2,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   });
@@ -296,8 +261,71 @@ function rowSlide() {
       trigger: row3,
       start: "bottom 30%",
       end: "bottom 5%",
-      scrub: true,
+      scrub: 1,
       ease: "power2.in"
     }
   });
 }
+
+function tabHoriScroll() {
+  const container = document.querySelector("#page3");
+  const sections = gsap.utils.toArray(".sec");
+
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      pin: true,
+      start: "top top",
+      scrub: 1,
+      end: '+=5000'
+    }
+  })
+
+  gsap.to(container, {
+    backgroundColor: "#e9e9e9",
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+    },
+    duration: 1
+  })
+}
+
+function handleMouseMove(event) {
+  const { clientX, clientY } = event;
+  
+  const moveX = (clientX / window.innerWidth - 0.5) * 30;
+  const moveY = (clientY / window.innerHeight - 0.5) * 30;
+
+
+  gsap.to(".logo1", {
+    x: moveX,
+    y: moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo2", {
+    x: -moveX,
+    y: -moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo3", {
+    x: moveX,
+    y: moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.to(".logo4", {
+    x: -moveX,
+    y: -moveY,
+    duration: 0.3,
+    ease: "power2.out"
+  });
+}
+
