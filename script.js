@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tagHover();
   cursorScale();
   logoHover();
+  imgsHover();
   rowSlide();
   tabHoriScroll();
 });
@@ -39,6 +40,41 @@ function cursorMove() {
       ease: "power2.out"
     });
   });
+}
+
+function mainButton() {
+  const mainButtons = document.querySelectorAll(".mainButton");
+  const cursor = document.querySelector("#cursor");
+
+  mainButtons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+      gsap.to(cursor, {
+        scale: 0.5,
+        duration: 0.2
+      });
+      gsap.to(button, {
+        x: Math.random() * 10 - 2,
+        y: Math.random() * 10 - 2,
+        rotation: Math.random() * 10 - 2,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+
+    button.addEventListener("mouseleave", () => {
+      gsap.to(cursor, {
+        scale: 1,
+        duration: 0.2
+      });
+      gsap.to(button, {
+        x: 0,
+        y: 0,
+        rotation: 0,
+        duration: 0.3,
+        ease: "power2.out"
+      });
+    });
+  })
 }
 
 function tagBreak() {
@@ -94,41 +130,6 @@ function cursorScale() {
       });
     });
   });
-}
-
-function mainButton() {
-  const mainButtons = document.querySelectorAll(".mainButton");
-  const cursor = document.querySelector("#cursor");
-
-  mainButtons.forEach(button => {
-    button.addEventListener("mouseenter", () => {
-      gsap.to(cursor, {
-        scale: 0.5,
-        duration: 0.2
-      });
-      gsap.to(button, {
-        x: Math.random() * 10 - 2,
-        y: Math.random() * 10 - 2,
-        rotation: Math.random() * 10 - 2,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    });
-
-    button.addEventListener("mouseleave", () => {
-      gsap.to(cursor, {
-        scale: 1,
-        duration: 0.2
-      });
-      gsap.to(button, {
-        x: 0,
-        y: 0,
-        rotation: 0,
-        duration: 0.3,
-        ease: "power2.out"
-      });
-    });
-  })
 }
 
 function logoHover() {
@@ -270,7 +271,7 @@ function tabHoriScroll() {
   const container = document.querySelector("#page3");
   const sections = gsap.utils.toArray(".sec");
 
-  const horizontalScroll = gsap.to(sections, {
+  gsap.to(sections, {
     xPercent: -100 * (sections.length - 1),
     ease: "none",
     scrollTrigger: {
@@ -280,6 +281,15 @@ function tabHoriScroll() {
       scrub: 1,
       end: '+=5000'
     }
+  })
+
+  gsap.to(container, {
+    backgroundColor: "#e9e9e9",
+    scrollTrigger: {
+      trigger: container,
+      start: "top top",
+    },
+    duration: 1
   })
 }
 
