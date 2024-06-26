@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   imgsHover();
   rowSlide();
   tabHoriScroll();
+  socialHover();
 });
 
 window.addEventListener("mousemove", handleMouseMove);
@@ -313,19 +314,116 @@ function handleMouseMove(event) {
     duration: 0.3,
     ease: "power2.out"
   });
-
-  gsap.to(".logo3", {
-    x: moveX,
-    y: moveY,
-    duration: 0.3,
-    ease: "power2.out"
-  });
-
-  gsap.to(".logo4", {
-    x: -moveX,
-    y: -moveY,
-    duration: 0.3,
-    ease: "power2.out"
-  });
 }
 
+function socialHover() {
+  const instagram = document.querySelector(".instagram");
+  const twitter = document.querySelector(".twitter");
+  const linkedin = document.querySelector(".linkedin");
+  const facebook = document.querySelector(".facebook");
+  const youtube = document.querySelector(".youtube");
+
+  const cursor = document.querySelector("#cursor");
+
+  console.log(instagram, twitter, linkedin, facebook, youtube)
+
+  instagram.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 0,
+      duration: 0.25,
+    });
+    gsap.to(instagram, {
+      color: '#e1326d'
+    })
+  });
+
+  instagram.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      duration: 0.25
+    });
+    gsap.to(instagram, {
+      color: 'white'
+    })
+  });
+
+  twitter.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 0,
+      duration: 0.25,
+    });
+    gsap.to(twitter, {
+      color: '#1da1f2'
+    })
+  });
+
+  twitter.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      duration: 0.25
+    });
+    gsap.to(twitter, {
+      color: 'white'
+    })
+  });
+
+  linkedin.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 0,
+      duration: 0.25,
+    });
+    gsap.to(linkedin, {
+      color: '#126bc4'
+    })
+  });
+
+  linkedin.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      duration: 0.25
+    });
+    gsap.to(linkedin, {
+      color: 'white'
+    })
+  });
+
+  facebook.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 0,
+      duration: 0.25,
+    });
+    gsap.to(facebook, {
+      color: '#106afe'
+    })
+  });
+
+  facebook.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      duration: 0.25
+    });
+    gsap.to(facebook, {
+      color: 'white'
+    })
+  });
+
+  youtube.addEventListener("mouseenter", () => {
+    gsap.to(cursor, {
+      scale: 0,
+      duration: 0.25,
+    });
+    gsap.to(youtube, {
+      color: '#ff0808'
+    })
+  });
+
+  youtube.addEventListener("mouseleave", () => {
+    gsap.to(cursor, {
+      scale: 1,
+      duration: 0.25
+    });
+    gsap.to(youtube, {
+      color: 'white'
+    })
+  });
+}
