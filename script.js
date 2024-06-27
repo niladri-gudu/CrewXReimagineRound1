@@ -7,12 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   cursorScale();
   logoHover();
   imgsHover();
-  rowSlide();
   tabHoriScroll();
+  transition1();
+  transition2();
+  rowSlide();
   socialHover();
 });
 
 window.addEventListener("mousemove", handleMouseMove);
+
+gsap.registerPlugin(ScrollTrigger);
 
 function lenis() {
   const lenis = new Lenis({
@@ -173,12 +177,27 @@ function imgsHover() {
   });
 }
 
+function tabHoriScroll() {
+  const container = document.querySelector("#tabs");
+  const sections = gsap.utils.toArray(".sec");
+
+  gsap.to(sections, {
+    xPercent: -100 * ((sections.length + 1) - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      pin: true,
+      start: "top top",
+      scrub: 1,
+      end: '+=6000'
+    }
+  })
+}
+
 function rowSlide() {
   const row1 = document.querySelector("#row1");
   const row2 = document.querySelector("#row2");
   const row3 = document.querySelector("#row3");
-
-  gsap.registerPlugin(ScrollTrigger);
 
   gsap.from(row1, {
     x: -200,
@@ -266,23 +285,6 @@ function rowSlide() {
       ease: "power2.in"
     }
   });
-}
-
-function tabHoriScroll() {
-  const container = document.querySelector("#tabs");
-  const sections = gsap.utils.toArray(".sec");
-
-  gsap.to(sections, {
-    xPercent: -100 * ((sections.length + 1) - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: container,
-      pin: true,
-      start: "top top",
-      scrub: 1,
-      end: '+=6000'
-    }
-  })
 }
 
 function handleMouseMove(event) {
@@ -415,4 +417,35 @@ function socialHover() {
       color: 'white'
     })
   });
+}
+
+function transition1() {
+  const transition = document.querySelector("#transition1");
+
+  gsap.to(transition, {
+    backgroundColor: "white",
+    scrollTrigger: {
+      trigger: transition,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      ease: "power2.in"
+    }
+  })
+}
+
+
+function transition2() {
+  const transition = document.querySelector("#transition2");
+
+  gsap.to(transition, {
+    backgroundColor: "#101010",
+    scrollTrigger: {
+      trigger: transition,
+      start: "top top",
+      end: "bottom bottom",
+      scrub: 1,
+      ease: "power2.in"
+    }
+  })
 }
