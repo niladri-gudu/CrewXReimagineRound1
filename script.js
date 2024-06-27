@@ -426,7 +426,7 @@ function transition1() {
     backgroundColor: "white",
     scrollTrigger: {
       trigger: transition,
-      start: "top -=100",
+      start: "top top",
       end: "bottom bottom",
       scrub: 1,
       ease: "power2.out"
