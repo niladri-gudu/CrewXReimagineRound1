@@ -269,28 +269,19 @@ function rowSlide() {
 }
 
 function tabHoriScroll() {
-  const container = document.querySelector("#page3");
+  const container = document.querySelector("#tabs");
   const sections = gsap.utils.toArray(".sec");
 
   gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
+    xPercent: -100 * ((sections.length + 1) - 1),
     ease: "none",
     scrollTrigger: {
       trigger: container,
       pin: true,
       start: "top top",
       scrub: 1,
-      end: '+=5000'
+      end: '+=6000'
     }
-  })
-
-  gsap.to(container, {
-    backgroundColor: "#e9e9e9",
-    scrollTrigger: {
-      trigger: container,
-      start: "top top",
-    },
-    duration: 1
   })
 }
 
@@ -324,8 +315,6 @@ function socialHover() {
   const youtube = document.querySelector(".youtube");
 
   const cursor = document.querySelector("#cursor");
-
-  console.log(instagram, twitter, linkedin, facebook, youtube)
 
   instagram.addEventListener("mouseenter", () => {
     gsap.to(cursor, {
