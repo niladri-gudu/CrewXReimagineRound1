@@ -426,10 +426,10 @@ function transition1() {
     backgroundColor: "white",
     scrollTrigger: {
       trigger: transition,
-      start: "top top",
+      start: "top -=100",
       end: "bottom bottom",
       scrub: 1,
-      ease: "power2.in"
+      ease: "power2.out"
     }
   })
 }
@@ -445,7 +445,7 @@ function transition2() {
       start: "top top",
       end: "bottom bottom",
       scrub: 1,
-      ease: "power2.in"
+      ease: "power2.out"
     }
   })
 }
