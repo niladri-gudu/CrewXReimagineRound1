@@ -3,15 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   cursorMove();
   mainButton();
   tagBreak();
+  homeReveal();
   tagHover();
   cursorScale();
   logoHover();
   imgsHover();
   tabHoriScroll();
-  transition1();
-  transition2();
   rowSlide();
   socialHover();
+  transition1();
+  transition2();
 });
 
 window.addEventListener("mousemove", handleMouseMove);
@@ -86,9 +87,45 @@ function tagBreak() {
   const tags = document.querySelectorAll(".tag");
 
   tags.forEach(tag => {
-    const tagText = tag.textContent.split("").map(letter => `<span class="tagText">${letter}</span>`).join("");
+    const tagText = tag.textContent.split("").map(letter => `<div class="tagText inline-block">${letter}</div>`).join("");
     tag.innerHTML = tagText;
   });
+}
+
+function homeReveal() {
+  const tagTextElements = document.querySelectorAll(".tagText");
+  const homeLogo = document.querySelectorAll(".homelogo");
+  const subtag = document.querySelector(".subtag");
+
+  console.log(homeLogo)
+
+  const tl = gsap.timeline()
+
+  tl.from(tagTextElements, {
+    y: 50,
+    opacity: 0,
+    ease: "elastic.out(2, 1)",
+    delay: 0.3,
+    duration: 1,
+    stagger: 0.05
+  });
+
+  tl.from(subtag, {
+    y: 15,
+    opacity: 0,
+    ease: "elastic.out(1.5, 1)",
+    duration: 0.5,
+    delay: 0.2
+  }, 'apple');
+
+  tl.from(homeLogo, {
+    scale: 0.5, 
+    opacity: 0,
+    duration: 0.6,
+    ease: "elastic.out(1, 1)",
+  }, 'apple')
+
+
 }
 
 function tagHover() {
@@ -139,6 +176,7 @@ function cursorScale() {
 
 function logoHover() {
   const logo = document.querySelector(".logo");
+  // const mainLogo = document.querySelector(".mainLogo");
   const cursor = document.querySelector("#cursor");
 
   logo.addEventListener("mouseenter", () => {
@@ -433,7 +471,6 @@ function transition1() {
     }
   })
 }
-
 
 function transition2() {
   const transition = document.querySelector("#transition2");
