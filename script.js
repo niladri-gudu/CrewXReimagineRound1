@@ -96,8 +96,10 @@ function homeReveal() {
   const tagTextElements = document.querySelectorAll(".tagText");
   const homeLogo = document.querySelectorAll(".homelogo");
   const subtag = document.querySelector(".subtag");
+  const last = document.querySelectorAll(".last");
+  const mainButton = document.querySelectorAll(".mainButton");
 
-  console.log(homeLogo)
+  console.log(mainButton)
 
   const tl = gsap.timeline()
 
@@ -114,9 +116,22 @@ function homeReveal() {
     y: 15,
     opacity: 0,
     ease: "elastic.out(1.5, 1)",
-    duration: 0.5,
-    delay: 0.2
-  }, 'apple');
+    duration: 0.7,
+  });
+
+  tl.from(last, {
+    scale: 0.5, 
+    opacity: 0,
+    duration: 0.6,
+    ease: "power4.out",
+  }, 'apple')
+
+  tl.from(mainButton, {
+    scale: 0.5, 
+    opacity: 0,
+    duration: 0.6,
+    ease: "power4.out",
+  }, 'apple')
 
   tl.from(homeLogo, {
     scale: 0.5, 
@@ -124,8 +139,6 @@ function homeReveal() {
     duration: 0.6,
     ease: "elastic.out(1, 1)",
   }, 'apple')
-
-
 }
 
 function tagHover() {
