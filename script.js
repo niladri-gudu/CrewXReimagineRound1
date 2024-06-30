@@ -111,7 +111,7 @@ function homeReveal() {
     y: 50,
     opacity: 0,
     ease: "bounce.out",
-    delay: 0.3,
+    delay: 0.7,
     duration: 1,
     stagger: 0.05
   });
