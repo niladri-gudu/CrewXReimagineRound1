@@ -374,7 +374,6 @@ function footerReveal() {
     scrollTrigger: {
       trigger: footerImg,
       start: "top 40%",
-      markers: true
     }
   })
 }
