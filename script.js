@@ -4,11 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   mainButton();
   tagBreak();
   homeReveal();
+  secondReveal();
+  thirdReveal();
+  tabHoriScroll();
+  fourthReveal();
+  hrAnimate();
+  fifthReveal();
+  footerReveal();
   tagHover();
   cursorScale();
   logoHover();
   imgsHover();
-  tabHoriScroll();
   rowSlide();
   socialHover();
   transition1();
@@ -87,7 +93,7 @@ function tagBreak() {
   const tags = document.querySelectorAll(".tag");
 
   tags.forEach(tag => {
-    const tagText = tag.textContent.split("").map(letter => `<div class="tagText inline-block">${letter}</div>`).join("");
+    const tagText = tag.textContent.split("").map(letter => `<span class="tagText">${letter}</span>`).join("");
     tag.innerHTML = tagText;
   });
 }
@@ -99,14 +105,12 @@ function homeReveal() {
   const last = document.querySelectorAll(".last");
   const mainButton = document.querySelectorAll(".mainButton");
 
-  console.log(mainButton)
-
   const tl = gsap.timeline()
 
   tl.from(tagTextElements, {
     y: 50,
     opacity: 0,
-    ease: "elastic.out(2, 1)",
+    ease: "bounce.out",
     delay: 0.3,
     duration: 1,
     stagger: 0.05
@@ -123,14 +127,14 @@ function homeReveal() {
     scale: 0.5, 
     opacity: 0,
     duration: 0.6,
-    ease: "power4.out",
+    ease: "power2.out",
   }, 'apple')
 
   tl.from(mainButton, {
     scale: 0.5, 
     opacity: 0,
     duration: 0.6,
-    ease: "power4.out",
+    ease: "power2.out",
   }, 'apple')
 
   tl.from(homeLogo, {
@@ -139,6 +143,240 @@ function homeReveal() {
     duration: 0.6,
     ease: "elastic.out(1, 1)",
   }, 'apple')
+}
+
+function thatsWhyBreak(ele) {
+  const text = ele.textContent.split(" ").map(words => `<span>${words}</span>`).join(" ");
+  ele.innerHTML = text;
+  return ele.querySelectorAll("span");
+}
+
+function secondReveal() {
+
+  const why = document.querySelector(".why");
+  const thatsWhy = document.querySelector(".thatsWhy");
+
+  const broken = thatsWhyBreak(thatsWhy);
+  
+  gsap.from(why, {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 1,
+    scrollTrigger: {
+      trigger: why,
+      start: "top 70%",
+      end: "top 40%",
+      scrub: 2
+    }
+  })
+
+  gsap.from(broken, {
+    y: 100,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: broken,
+      start: "top 80%",
+      end: "top 20%",
+      scrub: 2
+    }
+  })
+}
+
+function thirdReveal() {
+  const text = document.querySelector(".everything");
+
+  gsap.from(text, {
+    y: 60,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: text,
+      start: "top 50%",
+    }
+  })
+}
+
+function tabHoriScroll() {
+  const container = document.querySelector("#tabs");
+  const sections = gsap.utils.toArray(".sec");
+
+  gsap.to(sections, {
+    xPercent: -100 * ((sections.length + 1) - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: container,
+      pin: true,
+      start: "top top",
+      scrub: 1,
+      end: () => `+=${container.offsetWidth}`
+    }
+  })
+}
+
+function fourthReveal() {
+  const join = document.querySelectorAll(".join");
+  const joinDesc = document.querySelector(".joinDesc");
+  const joinImg = document.querySelector(".joinImg");
+  const block = document.querySelectorAll(".block");
+  const block1 = document.querySelectorAll(".block1");
+
+  gsap.from(join, {
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: join,
+      start: "top 70%",
+    }
+  })
+
+  gsap.from(joinDesc, {
+    y: 15,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: joinDesc,
+      start: "top 70%",
+    }
+  })
+
+  gsap.from(joinImg, {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 1,
+    scrollTrigger: {
+      trigger: joinImg,
+      start: "top 70%",
+    }
+  })
+
+  gsap.from(block1, {
+    y: -100,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: block,
+      start: "top 60%",
+    }
+  })
+
+  gsap.from(block, {
+    y: -100,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    delay: 0.1,
+    scrollTrigger: {
+      trigger: block,
+      start: "top 60%",
+    }
+  })
+}
+
+function hrAnimate() {
+  const hr = document.querySelector('.hr')
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.fromTo(hr, 
+    { scaleX: 0 }, 
+    {
+      scaleX: 1,
+      scrollTrigger: {
+        trigger: hr,
+        start: "top 80%",
+      }
+    }
+  );
+}
+
+function fifthReveal() {
+  const title = document.querySelector(".millionsTitle");
+  const subText = document.querySelector(".millionsSubText");
+
+  gsap.from(title, {
+    y: 50,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: title,
+      start: "top 70%",
+    }
+  })
+
+  gsap.from(subText, {
+    y: 15,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: subText,
+      start: "top 70%",
+    }
+  })
+}
+
+function footerReveal() {
+  const social = document.querySelectorAll(".social");
+  const connect = document.querySelector(".connect");
+  const logo = document.querySelector(".footerLogo");
+  const footerImg = document.querySelector(".footerImg");
+
+  gsap.from(logo, {
+    y: -100,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: footer,
+      start: "top 30%",
+    }
+  })
+
+
+  gsap.from(connect, {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: connect,
+      start: "top 80%",
+    }
+  
+  })
+
+  gsap.from(social, {
+    y: -50,
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: social,
+      start: "top 80%",
+    }
+  })
+
+  gsap.from(footerImg, {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: footerImg,
+      start: "top 40%",
+      markers: true
+    }
+  })
 }
 
 function tagHover() {
@@ -226,23 +464,6 @@ function imgsHover() {
       });
     });
   });
-}
-
-function tabHoriScroll() {
-  const container = document.querySelector("#tabs");
-  const sections = gsap.utils.toArray(".sec");
-
-  gsap.to(sections, {
-    xPercent: -100 * ((sections.length + 1) - 1),
-    ease: "none",
-    scrollTrigger: {
-      trigger: container,
-      pin: true,
-      start: "top top",
-      scrub: 1,
-      end: '+=6000'
-    }
-  })
 }
 
 function rowSlide() {
