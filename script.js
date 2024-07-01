@@ -362,7 +362,7 @@ function footerReveal() {
     duration: 0.5,
     stagger: 0.05,
     scrollTrigger: {
-      trigger: social,
+      trigger: connect,
       start: "top 80%",
     }
   })
