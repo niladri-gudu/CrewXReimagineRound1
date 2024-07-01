@@ -345,6 +345,7 @@ function footerReveal() {
 
 
   gsap.from(connect, {
+    x: 100,
     opacity: 0,
     ease: "power2.out",
     duration: 0.5,
@@ -352,7 +353,6 @@ function footerReveal() {
       trigger: connect,
       start: "top 80%",
     }
-  
   })
 
   gsap.from(social, {
@@ -368,6 +368,7 @@ function footerReveal() {
   })
 
   gsap.from(footerImg, {
+    x: -100,
     opacity: 0,
     ease: "power2.out",
     duration: 0.5,
