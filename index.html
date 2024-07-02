@@ -171,13 +171,53 @@
       </div>
     </div>
     <div id="transition2" class="w-screen h-[170vh] bg-[#fff]"></div>
-    <div id="footer" class="h-screen w-screen bg-[#101010]">
-      <div class="bg-green-300 border-white border-5 overflow-y-hidden">
-        <img class="absolute bottom-0 left-0 w-[50vw] footerLogo" src="./images/notion logo/Untitled.svg" alt="">
+    <div id="footer" class="relative bottom-0 left-0 bg-[#101010] h-screen w-screen">
+      <div class="absolute bottom-0 left-0 w-[50vw] border-white border-5 overflow-y-hidden">
+        <img class="footerLogo" src="./images/notion logo/Untitled.svg" alt="">
       </div>
-      <img class="footerImg ml-20 pt-36 w-[40vw]" src="./images/misc/image.webp" alt="">
-      <h3 class="connect absolute py-24 px-16 mr-4 text-white text-4xl font-medium right-0">Connect with us on</h3>
-      <div class="absolute bottom-0 right-0 mx-10 my-10 flex gap-4 items-center justify-center ">
+      <img class="footerImg absolute ml-20 pt-36 w-[40vw]" src="./images/misc/image.webp" alt="">
+      <div class="links absolute right-0 text-white flex gap-20 mx-10 mt-[250px]">
+        <div class="links">
+          <h3 class="link-heading font-bold text-xl mb-3">Company</h3>
+          <ul class="flex flex-col gap-2">
+            <li class="link-link">About Us</li>
+            <li class="link-link">Careers</li>
+            <li class="link-link">Security</li>
+            <li class="link-link">Status</li>
+            <li class="link-link">Terms &amp; Privacy</li>
+          </ul>
+        </div>
+        <div class="links">
+          <h3 class="link-heading font-bold text-xl mb-3">Download</h3>
+          <ul class="flex flex-col gap-2">
+            <li class="link-link">iOS &amp; Android</li>
+            <li class="link-link">Mac &amp; Windows</li>
+            <li class="link-link">Calendar</li>
+            <li class="link-link">Web Clipper</li>
+          </ul>
+        </div>
+        <div class="links">
+          <h3 class="link-heading font-bold text-xl mb-3">Resources</h3>
+          <ul class="flex flex-col gap-2">
+            <li class="link-link">Help Center</li>
+            <li class="link-link">Blog</li>
+            <li class="link-link">Community</li>
+            <li class="link-link">Integrations</li>
+            <li class="link-link">Affiliates</li>
+          </ul>
+        </div>
+        <div class="links">
+          <h3 class="link-heading font-bold text-xl mb-3">Notion for</h3>
+          <ul class="flex flex-col gap-2">
+            <li class="link-link">Enterprise</li>
+            <li class="link-link">Small business</li>
+            <li class="link-link">Personal</li>
+            <li class="link-link">Pricing</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="connect absolute pt-[550px] px-16 mr-4 text-white text-4xl font-medium right-0">Connect with us on</h3>
+      <div class="absolute bottom-0 right-0 mx-10 my-10 flex gap-4 items-center justify-center">
         <i class="instagram social p-1 z-30 mix-blend-difference ri-instagram-line text-white text-6xl"></i>
         <i class="twitter social p-1 z-30 mix-blend-difference ri-twitter-fill text-white text-6xl"></i>
         <i class="facebook social p-1 z-30 mix-blend-difference ri-facebook-fill text-white text-6xl"></i>
@@ -185,6 +225,7 @@
         <i class="youtube social p-1 z-30 mix-blend-difference ri-youtube-fill text-white text-6xl"></i>
       </div>
     </div>
+    
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

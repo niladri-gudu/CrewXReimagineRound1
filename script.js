@@ -331,6 +331,10 @@ function footerReveal() {
   const connect = document.querySelector(".connect");
   const logo = document.querySelector(".footerLogo");
   const footerImg = document.querySelector(".footerImg");
+  const linkHead = document.querySelectorAll(".link-heading");
+  const linkLink = document.querySelectorAll(".link-link");
+
+  console.log(linkLink)
 
   gsap.from(logo, {
     y: -100,
@@ -345,13 +349,13 @@ function footerReveal() {
 
 
   gsap.from(connect, {
-    x: 100,
+    y: -50,
     opacity: 0,
     ease: "power2.out",
     duration: 0.5,
     scrollTrigger: {
       trigger: connect,
-      start: "top 80%",
+      start: "top 10%",
     }
   })
 
@@ -363,7 +367,7 @@ function footerReveal() {
     stagger: 0.05,
     scrollTrigger: {
       trigger: connect,
-      start: "top 80%",
+      start: "top top",
     }
   })
 
@@ -375,6 +379,28 @@ function footerReveal() {
     scrollTrigger: {
       trigger: footerImg,
       start: "top 40%",
+    }
+  })
+
+  gsap.from(linkHead, {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    stagger: 0.05,
+    scrollTrigger: {
+      trigger: linkHead,
+      start: "top 70%",
+    }
+  })
+
+  gsap.from(linkLink, {
+    opacity: 0,
+    ease: "power2.out",
+    duration: 0.5,
+    stagger: 0.01,
+    scrollTrigger: {
+      trigger: linkLink,
+      start: "top 70%",
     }
   })
 }
