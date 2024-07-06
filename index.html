@@ -22,40 +22,44 @@
       </header>
       <div class="logos w-screen h-[86.3vh] absolute flex justify-center items-center">
         <div class="h-[10vw] w-[10vw] absolute top-24 left-32 flex items-center justify-center z-30 mix-blend-difference imggg">
-          <img class="homelogo logo1 h-[8vw]" src="./images/home images/task/task white.svg" alt="">
+          <img class="homelogo logo1 lg:h-[8vw] md:h-[5vw] sm:h-[3vw] sm:hidden md:hidden" src="./images/home images/task/task white.svg" alt="">
         </div>
         <div class="h-[10vw] w-[10vw] absolute bottom-28 left-56 flex items-center justify-center z-30 mix-blend-difference imggg">
-          <img class="homelogo logo2 h-[8vw]" src="./images/home images/money/money white.svg" alt="">
+          <img class="homelogo logo2 h-[8vw] sm:hidden md:hidden" src="./images/home images/money/money white.svg" alt="">
         </div>
         <div class="h-[10vw] w-[10vw] absolute top-24 right-32 flex items-center justify-center z-30 mix-blend-difference imggg">
-          <img class="homelogo logo2 h-[8vw]" src="./images/home images/target/target white.svg" alt="">
+          <img class="homelogo logo2 h-[8vw] sm:hidden md:hidden" src="./images/home images/target/target white.svg" alt="">
         </div>
         <div class="h-[10vw] w-[10vw] absolute bottom-28 right-56 flex items-center justify-center z-30 mix-blend-difference imggg">
-          <img class="homelogo logo1 h-[8vw]" src="./images/home images/todo/todo white.svg" alt="">
+          <img class="homelogo logo1 h-[8vw] sm:hidden md:hidden" src="./images/home images/todo/todo white.svg" alt="">
         </div>
-    </div>
+      </div>
+      
+      
       <div class="h-[67vh] w-screen flex flex-col items-center justify-center">
-        <div class="overlay text-9xl font-bold tracking-tight z-30 tag">Organize</div>
-        <div class="overlay text-9xl font-bold tracking-tight z-30 tag">Everything</div>
-        <p class="text-center pt-10 text-xl opacity-80 subtag">Turn ideas into action
+        <div class="overlay lg:text-9xl md:text-7xl sm:text-6xl font-bold tracking-tight z-30 tag">Organize</div>
+        <div class="overlay lg:text-9xl md:text-7xl sm:text-4xl font-bold tracking-tight z-30 tag">Everything</div>
+        <p class="text-center pt-10 lg:text-xl md:text-lg sm:text-xs sm:flex-col opacity-80 subtag">Turn ideas into action
           with Notion’s AI-powered workspace.</p>
       </div>
-      <div class="flex gap-10 justify-center">
-        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#0F62FE] w-fit rounded-lg py-4 px-6 gap-4 text-white ease-in-out hover:bg-[#0053a3]">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-10">
+        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#0F62FE] w-fit rounded-lg py-3 px-4 md:py-4 md:px-6 gap-3 md:gap-4 text-white ease-in-out hover:bg-[#0053a3]">
           Get Started
           <svg class="flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96967 12.5303C3.67678 12.2374 3.67678 11.7626 3.96967 11.4697L8.43934 7L3.96967 2.53033C3.67678 2.23744 3.67678 1.76256 3.96967 1.46967C4.26256 1.17678 4.73744 1.17678 5.03033 1.46967L10.0303 6.46967C10.3232 6.76256 10.3232 7.23744 10.0303 7.53033L5.03033 12.5303C4.73744 12.8232 4.26256 12.8232 3.96967 12.5303Z" fill="currentColor"></path>
           </svg>
         </div>
         
-        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#25272b] w-fit rounded-lg py-4 px-6 gap-4 text-white ease-in-out hover:bg-[#1c1e21]">
+        <div class="mainButton z-30 mix-blend-difference flex text-left items-center bg-[#25272b] w-fit rounded-lg py-3 px-4 md:py-4 md:px-6 gap-3 md:gap-4 text-white ease-in-out hover:bg-[#1c1e21]">
           See Pricing
           <svg class="flex-none" width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M3.96967 12.5303C3.67678 12.2374 3.67678 11.7626 3.96967 11.4697L8.43934 7L3.96967 2.53033C3.67678 2.23744 3.67678 1.76256 3.96967 1.46967C4.26256 1.17678 4.73744 1.17678 5.03033 1.46967L10.0303 6.46967C10.3232 6.76256 10.3232 7.23744 10.0303 7.53033L5.03033 12.5303C4.73744 12.8232 4.26256 12.8232 3.96967 12.5303Z" fill="currentColor"></path>
           </svg>
         </div>
-        
       </div>
+      
+      
+      
     </div>
     <div id="why" class="w-screen h-screen bg-[#101010] text-white">
       <h1 class="py-20 px-36 text-7xl font-medium tracking-tighter why">Why use Notion?</h1>
@@ -124,20 +128,21 @@
       </div>
       <p class="w-screen text-center mt-10 text-lg joinDesc">Our vibrant community produces content, teaches courses, and leads events all over the world.</p>
       <img class="w-[80vw] m-auto joinImg" src="./images/misc/faces.webp" alt="">
-      <div class="flex w-screen justify-between gap-10 px-36 pb-24">
-        <div class="bg-[#f6f5f4] w-full p-10 rounded-2xl block">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 w-screen justify-between gap-10 px-36 pb-24">
+        <div class="bg-[#f6f5f4] w-full p-10 rounded-2xl">
           <h1 class="text-6xl font-semibold mb-2">1M+</h1>
           <p>community members</p>
         </div>
-        <div class="bg-slate-100 w-full p-10 rounded-2xl block1">
+        <div class="bg-slate-100 w-full p-10 rounded-2xl">
           <h1 class="text-6xl font-semibold mb-2">150+</h1>
           <p>community groups</p>
         </div>
-        <div class="bg-[#f6f5f4] w-full p-10 rounded-2xl block">
+        <div class="bg-[#f6f5f4] w-full p-10 rounded-2xl">
           <h1 class="text-6xl font-semibold mb-2">50+</h1>
           <p>countries represented</p>
         </div>
       </div>
+      
       <hr class="w-[80vw] mx-auto border-black border-1 hr">
     </div>
     <div id="companies" class="h-screen w-screen bg-[#fff]">
